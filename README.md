@@ -42,3 +42,6 @@ void display::text(const std::string& str, uint16_t x, uint16_t y);
 void display::show();
 ```
 
+<hr />
+
+This project is owned and maintained by Kade Angell. It is licensed under the GPL-3.0 License.
