@@ -8,7 +8,8 @@
 
 class Display_I2C {
 public:
-    Display_I2C(uint16_t width, uint16_t height, i2c_inst_t* i2c, uint8_t addr, uint gpio_sda, uint gpio_scl);
+    Display_I2C(uint16_t width, uint16_t height, i2c_inst_t* i2c, uint8_t addr, uint gpio_sda, uint gpio_scl) : 
+        width(width), height(height), i2c(i2c), addr(addr), frameBuffer(width, height, FrameBuffer::MONO_HLSB) { }
 
     virtual void initDisplay() = 0;
     virtual void powerOn() = 0;

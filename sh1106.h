@@ -8,7 +8,7 @@
 
 #include "framebuffer.h"
 
-class SH1106 : public Display_I2C {
+class SH1106 {
 public:
     SH1106(uint16_t width, uint16_t height, i2c_inst_t* i2c, uint8_t addr, uint gpio_sda, uint gpio_scl);
 
