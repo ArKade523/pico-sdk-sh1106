@@ -3,11 +3,12 @@
 
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
+#include "display_i2c.h"
 #include <cstdint>
 
 #include "framebuffer.h"
 
-class SH1106 {
+class SH1106 : public Display_I2C {
 public:
     SH1106(uint16_t width, uint16_t height, i2c_inst_t* i2c, uint8_t addr, uint gpio_sda, uint gpio_scl);
 
@@ -33,7 +34,7 @@ protected:
     uint16_t width, height;
     i2c_inst_t* i2c;
     uint8_t addr;
-    FrameBuffer frameBuffer; // Placeholder for frame buffer implementation
+    FrameBuffer frameBuffer;
 };
 
 #endif // PICO_SH1106_H
